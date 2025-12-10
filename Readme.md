@@ -96,7 +96,7 @@ VITE_BACKEND_API_BASE_URL=http://localhost:5001/api
 # Nếu PORT Backend thay đổi: http://localhost:<PORT>/api
 ```
 
-- Chạy Frontend(/authgg/backend)
+- Chạy Frontend(/authgg/frontend)
 
 ```base
 npm run dev

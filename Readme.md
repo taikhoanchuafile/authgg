@@ -71,29 +71,29 @@ https://authgg-fe.vercel.app/
 
 ## 🔄 Quy trình Login Google
 
-1. **User click "Login with Google" trên frontend**
+**1.User click "Login with Google" trên frontend**
 
 - FE hiện popup và gửi xác minh đến Google OAuth consent screen, nếu hợp lệ, người dùng chọn email đăng nhập.
 
-2. **Google trả "authorization code"**
+**2.Google trả "authorization code"**
 
 - FE nhận code và gửi lên BE để đổi lấy access token Google.
 
-3. **BE xác thực credential mà FE gửi lên với Client_id (KEY console cloud google)**
+**3.BE xác thực credential mà FE gửi lên với Client_id (KEY console cloud google)**
 
 - Nhận thông tin user (name, email, avatar, sub, email_verified,...).
 - Nếu user chưa có trên Database thì tạo mới.
 
-4. **BE tạo JWT**
+**4.BE tạo JWT**
 
 - Tạo **access token** (ngắn hạn) gửi response về FE.
 - Tạo **refresh token** (dài hạn) lưu trong MONGODB và gửi qua cookie về FE.
 
-5. **FE sử dụng access token để gọi API**
+**5.FE sử dụng access token để gọi API**
 
 - Nếu access token hết hạn thì FE gửi request lên BE(refresh-token) để nhận về access token mới mà không cần phải đăng nhập lại.
 
-6. **Đăng xuất**
+**6.Đăng xuất**
 
 - BE sẽ xóa **refress token** trong MONGODB và cookies.
 - Access token hết hạn tự động đăng xuất.

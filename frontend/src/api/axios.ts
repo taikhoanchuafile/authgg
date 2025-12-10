@@ -7,9 +7,8 @@ import { toast } from "react-toastify";
  *                                      Setup axios
  * =============================================================================================
  */
-const baseURL = import.meta.env.VITE_BACKEND_API_BASE_URL;
-console.log(baseURL);
-
+const baseURL =
+  import.meta.env.VITE_BACKEND_API_BASE_URL || "http://localhost:5001/api";
 const api = axios.create({
   baseURL,
   withCredentials: true, //luôn gửi kèm cookies

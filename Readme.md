@@ -61,11 +61,11 @@ https://authgg-fe.vercel.app/
 
 ### **Node.js + Express.js**
 
-- Backend tiếp nhận, xử lý, gửi phản hồi, cung cấp API xác thực
+- Backend tiếp nhận, xử lý, gửi phản hồi, cung cấp API xác thực.
 
 ### **MongoDB + Mongoose**
 
-- Lưu thông tin user và refresh token
+- Lưu thông tin user và refresh token.
 
 ---
 
@@ -73,21 +73,21 @@ https://authgg-fe.vercel.app/
 
 1. **User click "Login with Google" trên frontend**
 
-- FE hiện popup và gửi xác minh đến Google OAuth consent screen, nếu hợp lệ, người dùng chọn emil đăng nhập
+- FE hiện popup và gửi xác minh đến Google OAuth consent screen, nếu hợp lệ, người dùng chọn email đăng nhập.
 
 2. **Google trả "authorization code"**
 
-- FE nhận code và gửi lên BE để đổi lấy access token Google
+- FE nhận code và gửi lên BE để đổi lấy access token Google.
 
-3. **BE xác thực credential mà FE gửi lên với Client_id**
+3. **BE xác thực credential mà FE gửi lên với Client_id (KEY console cloud google)**
 
-- Nhận thông tin user (name, email,avatar, sub, email_verified,...)
-- Nếu user chưa có trên Database thì tạo mới
+- Nhận thông tin user (name, email, avatar, sub, email_verified,...).
+- Nếu user chưa có trên Database thì tạo mới.
 
 4. **BE tạo JWT**
 
 - Tạo **access token** (ngắn hạn) gửi response về FE.
-- Tạo **refresh token** (dài hạn) lưu trong MONGODB và gửi qua cookie về FE
+- Tạo **refresh token** (dài hạn) lưu trong MONGODB và gửi qua cookie về FE.
 
 5. **FE sử dụng access token để gọi API**
 
@@ -95,7 +95,7 @@ https://authgg-fe.vercel.app/
 
 6. **Đăng xuất**
 
-- BE sẽ xóa **refress token** trong MONGODB và cookies
+- BE sẽ xóa **refress token** trong MONGODB và cookies.
 - Access token hết hạn tự động đăng xuất.
 
 ---

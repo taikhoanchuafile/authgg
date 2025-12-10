@@ -12,6 +12,8 @@ Mục tiêu: Tìm hiểu về **authentication** với Google - cấu trúc rõ 
 
 ## 🖼️ Demo / Screenshot
 
+Link:
+
 ![demo1](./screenshots/demo1.PNG)
 ![demo1](./screenshots/demo2.PNG)
 
@@ -34,7 +36,7 @@ Mục tiêu: Tìm hiểu về **authentication** với Google - cấu trúc rõ 
 - JSON Web Token (JWT)
 - Bcrypt / Crypto (hash password)
 - Cookie HttpOnly / refresh token
-- (Nếu có) OAuth / Google Auth
+- OAuth / Google Auth
 
 ---
 
@@ -96,7 +98,7 @@ VITE_BACKEND_API_BASE_URL=http://localhost:5001/api
 # Nếu PORT Backend thay đổi: http://localhost:<PORT>/api
 ```
 
-- Chạy Frontend(/authgg/backend)
+- Chạy Frontend(/authgg/frontend)
 
 ```base
 npm run dev

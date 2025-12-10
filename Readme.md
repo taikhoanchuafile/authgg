@@ -35,9 +35,57 @@ https://authgg-fe.vercel.app/
 - Node.js + Express.js
 - MongoDB + Mongoose
 - JSON Web Token (JWT)
-- Bcrypt / Crypto (hash password)
+- Bcrypt / Crypto (hash token)
 - Cookie HttpOnly / refresh token
 - OAuth / Google Auth
+
+---
+
+## 🧰 Công nghệ và khái niệm chính
+
+### **OAuth 2.0 / Goole Auth**
+
+- Đây là giao thức xác thực cho phép người dùng đăng nhập bằng tài khoản Google.
+- Server nhận **credential** từ Google, BE xử lý thông tin và phản hồi **access token** để xác thực người dùng.
+- Giúp ứng dụng không cần phải lưu tài khoản/mật khẩu người dùng.
+
+### **JWT - JSON WEB TOKEN**
+
+- Dùng để tạo token xác thực cho người dùng sau khi đăng nhập thành công. Gồm 2 loại:
+- **Access Token:** token ngắn hạn(15-30 phút), dùng để xác thực các request đế server.
+- **Refresh Token:** token dài hạn(7-30 ngày), dùng để cấp lại access token khi hết hạn.
+
+### **Cooki HttpOnly**
+
+- Lưu refresh token an toàn trên trình duyệt, **JS không thể truy cập**, tránh rủi ro XSS.
+
+### **Node.js + Express.js**
+
+- Backend tiếp nhận, xử lý, gửi phản hồi, cung cấp API xác thực
+
+### **MongoDB + Mongoose**
+
+## Lưu thông tin user và refresh token
+
+## 🔄 Quy trình Login Google
+
+1. **User click "Login with Google" trên frontend**
+
+- FE hiện popup và gửi xác minh đến Google OAuth consent screen, nếu hợp lệ, người dùng chọn emil đăng nhập 2.**Google trả authorization code**
+- FE nhận code và gửi lên BE để đổi lấy access token Google 3.**BE xác thực credential mà FE gửi lên với Client_id**
+- Nhận thông tin user (name, email,avatar, sub, email_verified,...)
+- Nếu user chưa có trên Database thì tạo mới 4.**BE tạo JWT**
+- Tạo **access token** (ngắn hạn) gửi responsev về FE.
+- Tạo **refresh token** (dài hạn) lưu trong MONGODB và gửi qua cookie về FE
+
+  5.**FE sử dụng access token để gọi API**
+
+- Nếu access token hết hạn thì gửi request lên BE refresh token để nhận về access token mới mà không cần phải đăng nhập lại.
+
+  6.**Đăng xuất**
+
+- BE sẽ xóa **refress token** trong MONGODB và cookies
+- Access token hết hạn tự động đăng xuất.
 
 ---
 
@@ -57,7 +105,7 @@ cd backend
 npm install
 ```
 
-- Vào authgg/backend tạo file .env
+- Vào authgg/backend tạo file **_.env_**
 
 ```bash
 PORT=5001

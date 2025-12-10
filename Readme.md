@@ -1,8 +1,5 @@
 # 🚀 Authorization với Google
 
-![status](https://img.shields.io/badge/status-active-brightgreen)
-![license](https://img.shields.io/badge/license-MIT-blue)
-
 ## 📌 Giới thiệu
 
 Dự án này là ứng dụng MERN Stack cho phép người dùng thực hiện **authentication**,  
@@ -105,3 +102,7 @@ npm run dev
 ```
 
 - Ctrl + click chuột trái vào URL: _http://localhost:5173_ để mở dự án trên trình duyệt
+
+## 📄 License
+
+Dự án phát hành theo giấy phép [MIT](./LICENSE).

@@ -34,7 +34,7 @@ Mục tiêu: Tìm hiểu về **authentication** với Google - cấu trúc rõ 
 - JSON Web Token (JWT)
 - Bcrypt / Crypto (hash password)
 - Cookie HttpOnly / refresh token
-- (Nếu có) OAuth / Google Auth
+- OAuth / Google Auth
 
 ---
 

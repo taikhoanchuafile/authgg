@@ -125,13 +125,13 @@ PORT=5001
 GOOGLE_CLIENT_ID=<client_id của Google>
 # client_id lấy từ https://console.cloud.google.com/ .VD:xxxxxxxxxxxx-ap44gugk6d5m56husl04bqkohgi0bd35.apps.googleusercontent.com
 
-MONGODB_URL= <url csdl của mongodb>
+MONGODB_URL=<url csdl của mongodb>
 # Key URL mongodb. Vd:mongodb+srv:....@cluster0.jerdkbp.mongodb.net/devGG?appName=Cluster0
 
 FRONTEND_URL=http://localhost:5173
 #port frontend React
 
-ACCESS_TOKEN_SECRET= <key access tokeb>
+ACCESS_TOKEN_SECRET=<key access tokeb>
 # VD:c39acd4a56d3a428767a9a5bd7f37a6b9ea40d1278401aeef (chuỗi bất kỳ)
 ```
 
@@ -164,7 +164,7 @@ VITE_BACKEND_API_BASE_URL=http://localhost:5001/api
 npm run dev
 ```
 
-- Ctrl + click chuột trái vào URL: _http://localhost:5173_ để mở dự án trên trình duyệt
+- Ctrl + Chuột trái vào URL: _http://localhost:5173_ để mở dự án trên trình duyệt
 
 ## 📄 License
 
